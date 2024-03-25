@@ -1,0 +1,18 @@
+# @title Download prerequisites
+!wget -O ilariamainline.zip https://huggingface.co/TheStinger/IlariaRVCBeta/resolve/main/Ilaria%20RVC%20Beta%20-%20Linux-Colab%20Version.zip?download=true
+import zipfile
+zip_file1 = "/content/ilariamainline.zip"
+with zipfile.ZipFile(zip_file1, 'r') as zip_ref:
+    zip_ref.extractall()
+github_file_url = "https://raw.githubusercontent.com/poiqazwsx/Ilaria-RVC-Mainline/main/infer/lib/audio.py"
+colab_file_path = "/content/infer/lib/audio.py"
+import urllib.request
+urllib.request.urlretrieve(github_file_url, colab_file_path)
+print("File replaced successfully.")
+github_file_url = "https://raw.githubusercontent.com/poiqazwsx/Ilaria-RVC-Mainline/main/infer/lib/audio.py"
+colab_file_path = "/content/infer/lib/audio.py"
+import urllib.request
+urllib.request.urlretrieve(github_file_url, colab_file_path)
+print("File replaced successfully.")
+!pip install -r requirements.txt
+%mkdir /content/assets/weights
